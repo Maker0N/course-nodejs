@@ -23,8 +23,14 @@ async function getNotes() {
 
 async function removeNote(id) {
   const notes = await getNotes()
-  const newNotes = notes.filter((note) => note.id !== id.toString())
+  const deletedId = notes.filter((delNote) => {
+    return delNote.id === id.toString()
+  })
+  const newNotes = notes.filter((note) => {
+    return note.id !== id.toString()
+  })
   await fs.writeFile(notesPath, JSON.stringify(newNotes))
+  console.log(chalk.bgRed(`Note with id ${deletedId[0].id} was removed`))
   printNotes()
 }
 
