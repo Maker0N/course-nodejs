@@ -5,8 +5,17 @@
   "author": "maker0n",
   "license": "MIT",
   "dependencies": {
-    "@types/yargs": "^17.0.10",
     "chalk": "4.1.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
     "yargs": "^17.4.1"
+  },
+  "devDependencies": {
+    "@types/yargs": "^17.0.10",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "serve": "nodemon index.js"
   }
 }
