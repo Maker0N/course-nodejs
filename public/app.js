@@ -12,10 +12,12 @@ document.addEventListener('click', (e) => {
     if (newTitle) {
     edit(id, newTitle)
       .then(() => {
-        const li = e.target.closest('li')
-        let [text] = Array.from(li.childNodes)
-          .filter((node) => node.innerText === title)
+        const text = document.getElementById(`${id}`)
         text.innerText = newTitle
+        // const li = e.target.closest('li')
+        // let [text] = Array.from(li.childNodes)
+        //   .filter((node) => node.innerText === title)
+        // text.innerText = newTitle
         e.target.dataset.title = newTitle
     })
     }
